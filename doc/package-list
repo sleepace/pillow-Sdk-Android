@@ -1,0 +1,6 @@
+com.medica.jni
+com.medica.pillowsdk
+com.medica.pillowsdk.bluetooth
+com.medica.pillowsdk.domain
+com.medica.pillowsdk.interfs
+com.medica.pillowsdk.util
