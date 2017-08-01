@@ -6,21 +6,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.medica.jni.SleepAnalysis_Out;
-import com.medica.jni.SleepHelperJni;
-import com.medica.pillowsdk.bluetooth.PillowHelper;
-import com.medica.pillowsdk.domain.BleDevice;
-import com.medica.pillowsdk.domain.Detail;
-import com.medica.pillowsdk.domain.RealTimeData;
-import com.medica.pillowsdk.domain.Summary;
-import com.medica.pillowsdk.interfs.BleStateChangedListener;
-import com.medica.pillowsdk.interfs.Method;
-import com.medica.pillowsdk.interfs.RawDataCallback;
-import com.medica.pillowsdk.interfs.RealtimeDataCallback;
-import com.medica.pillowsdk.interfs.ResultCallback;
-import com.medica.pillowsdk.interfs.UpgradeCallback;
-import com.pillowsdk.demo.R;
-
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
@@ -37,6 +22,20 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
+
+import com.medica.jni.SleepAnalysis_Out;
+import com.medica.jni.SleepHelperJni;
+import com.medica.pillowsdk.bluetooth.PillowHelper;
+import com.medica.pillowsdk.domain.BleDevice;
+import com.medica.pillowsdk.domain.Detail;
+import com.medica.pillowsdk.domain.RealTimeData;
+import com.medica.pillowsdk.domain.Summary;
+import com.medica.pillowsdk.interfs.BleStateChangedListener;
+import com.medica.pillowsdk.interfs.Method;
+import com.medica.pillowsdk.interfs.RawDataCallback;
+import com.medica.pillowsdk.interfs.RealtimeDataCallback;
+import com.medica.pillowsdk.interfs.ResultCallback;
+import com.medica.pillowsdk.interfs.UpgradeCallback;
 
 public class MainActivity extends Activity{
 	private static final String TAG = MainActivity.class.getSimpleName();
@@ -355,10 +354,9 @@ public class MainActivity extends Activity{
 			// TODO Auto-generated method stub
 			LogUtil.showMsg(TAG+" handleRawData m:" + arg0+",res:" + arg1);
 		}
-		
+	
 		@Override
-		public void handleRawData(int[] arg0) {
-			// TODO Auto-generated method stub
+		public void handleRawData(float[][] arg0) {
 			LogUtil.showMsg(TAG+" handleRawData data:" + Arrays.toString(arg0));
 		}
 	};
